@@ -10,3 +10,4 @@ they allow to easily reuse existing code across platforms.
 * [SoundWire](soundwire.md)
 * [SMMSTOREv2](smmstorev2.md)
 * [USB4 Retimer](retimer.md)
+* [CBFS SMBIOS hooks](cbfs_smbios.md)
