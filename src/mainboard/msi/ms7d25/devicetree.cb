@@ -1,6 +1,12 @@
 chip soc/intel/alderlake
 	# FSP configuration
 
+	register "power_limits_config[ADL_S_642_125W_CORE]" = "{
+		.tdp_pl1_override = 228,
+		.tdp_pl2_override = 228,
+		.tdp_pl4 = 0,
+	}"
+
 	register "eist_enable" = "1"
 
 	# Sagv Configuration

@@ -3,6 +3,7 @@
 #include <acpi/acpi.h>
 #include <device/device.h>
 #include <soc/ramstage.h>
+#include <soc/vr_config.h>
 #include <smbios.h>
 #include <string.h>
 
@@ -118,6 +119,13 @@ void mainboard_silicon_init_params(FSP_S_CONFIG *params)
 	params->SataPortsSolidStateDrive[6] = 1; // M2_3
 	params->SataPortsSolidStateDrive[7] = 1; // M2_4
 	params->SataLedEnable = 1;
+
+	//params->EnergyEfficientPState = 0;
+	//params->EnergyEfficientTurbo = 0;
+	//params->MaxRingRatioLimit = 0x31;
+	//params->AcLoadline[VR_DOMAIN_IA] = VR_CFG_MOHMS(0.8);
+	//params->DcLoadline[VR_DOMAIN_IA] = VR_CFG_MOHMS(0.8);
+
 }
 
 #if CONFIG(GENERATE_SMBIOS_TABLES)
