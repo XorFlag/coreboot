@@ -11,7 +11,7 @@ export PACKAGES_PATH := $(EDK2_PATH)
 BUILD_STR = -p UefiPayloadPkg/UefiPayloadPkg.dsc
 BUILD_STR += -t COREBOOT
 BUILD_STR += -D BOOTLOADER=COREBOOT
-BUILD_STR += -q -s
+#BUILD_STR += -q -s
 
 #
 # EDK II has the following build options relevant to coreboot:
@@ -155,9 +155,9 @@ logo: $(EDK2_PATH)
 	case "$(CONFIG_EDK2_BOOTSPLASH_FILE)" in \
 		"") ;; \
 		/*) cp $(CONFIG_EDK2_BOOTSPLASH_FILE) \
-				$(project_dir)/MdeModulePkg/Logo/Logo.bmp;; \
+				$(EDK2_PATH)/MdeModulePkg/Logo/Logo.bmp;; \
 		*) cp $(top)/$(CONFIG_EDK2_BOOTSPLASH_FILE) \
-				$(project_dir)/MdeModulePkg/Logo/Logo.bmp;; \
+				$(EDK2_PATH)/MdeModulePkg/Logo/Logo.bmp;; \
 	esac \
 
 checktools:
