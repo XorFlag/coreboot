@@ -80,7 +80,7 @@ static void configure_misc(void)
 	msr = rdmsr(MSR_POWER_CTL);
 	msr.lo |= (1 << 0);	/* Enable Bi-directional PROCHOT as an input */
 	msr.lo |= (1 << 23);	/* Lock it */
-	msr.lo |= (1 << 18);	/* Energy/Performance Bias control */
+	//msr.lo |= (1 << 18);	/* Energy/Performance Bias control */
 	wrmsr(MSR_POWER_CTL, msr);
 }
 
@@ -131,7 +131,7 @@ void soc_core_init(struct device *cpu)
 
 	/* Set energy policy.  The "normal" EPB (6) is not suitable for Alder
 	 * Lake or Raptor Lake CPUs, as this results in higher uncore power. */
-	set_energy_perf_bias(7);
+	//set_energy_perf_bias(7);
 
 	const config_t *conf = config_of_soc();
 	/* Set energy-performance preference */

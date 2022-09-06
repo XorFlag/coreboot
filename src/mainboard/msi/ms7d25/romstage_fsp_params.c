@@ -5,6 +5,7 @@
 #include <fsp/api.h>
 #include <soc/romstage.h>
 #include <soc/meminit.h>
+#include <soc/vr_config.h>
 
 #include "gpio.h"
 
@@ -53,6 +54,10 @@ void mainboard_memory_init_params(FSPM_UPD *memupd)
 	 * pads including CLKREQ pins, despite GpioOverride = 1.
 	 */
 	memupd->FspmConfig.GpioOverride = 0;
+
+	memupd->FspmConfig.OcLock = 0;
+	memupd->FspmConfig.OcSupport = 1;
+	memupd->FspmConfig.IaIccMax = VR_CFG_AMP(250);
 
 	memcfg_init(memupd, &ddr4_mem_config, &dimm_module_spd_info, false);
 
